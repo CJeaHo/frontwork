@@ -1,0 +1,115 @@
+/*css영역*/
+h2 {
+	color: brown;
+}
+
+/*============1. 속성 선택자============*/
+/*div요소들 중 name속성값이 name1과 "일치"하는 요소*/
+div[name=name1] { /*완전일치*/
+	background-color: yellow;
+}
+
+/*div요소들 중 name속성값에 name1을 "포함"하는 요소(단어로써 공백으로 구분)*/
+div[name~=name1] { /*단어로 포함*/
+	color: yellow;
+}
+
+/*div요소들 중 class속성값이 class로 "시작"하는 요소(단어로써 -로 구분)*/
+div[class|=class] { /*단어로 시작*/
+	background-color: aquamarine;
+}
+
+/*div요소들 중 name속성값이 na로 "시작"하는 요소*/
+div[name^=na] { /*글자로 시작*/
+	font-size: 20px;
+}
+
+/*div요소들 중 class속성값이 ss로 "끝"나는 요소*/
+div[class$=ss] { /*글자로 끝*/
+	background-color: green;
+}
+
+/*div요소들 중 class속성값에 i를 "포함"하는 요소*/
+div[class*=i] { /*글자로 포함*/
+	background-color: skyblue;
+}
+
+/*div요소들 중 class속성값이 div-class인 요소들 중에서 name속성값에 name3를 "포함"하는 요소*/
+.div-class[name~=name3] { 
+	background-color: green;
+}
+
+/*스타일은 덮어씌워진다*/
+
+/*============2. 자손 선택자와 후손 선택자============*/
+/* a>b : a요소의 자손들 중에서 b요소만 선택 */
+/* #test1>*{background-color: burlywood;} */
+
+/* id가 test1인 요소의 자손들 중 h4요소만 선택 */
+#test1>h4 {
+	background-color: rgb(238, 126, 126)
+}
+
+#test1>ul>li {
+	background-color: rgb(0, 153, 255);
+}
+
+/* a b: a요소의 후손(모든 하위요소)들 중에서 b요소만 선택 */
+#test1 li {
+	color: yellow;	
+}
+
+/*============3. 동위 선택자============*/
+/* a요소 바로 앞에 있는 b요소 "하나만" 선택 */
+#test2+div {background-color: yellowgreen;}
+#test2+ul {background-color: blueviolet;} /* 바로 앞에 나오는 요소가 아니여서 적용X */
+
+/* a요소 뒤에 있는 "모든" b요소 선택 */
+#test2~ul {background-color: blueviolet;} 
+#test2~div { color: blue;}
+
+
+/*============4. 반응 선택자============*/
+.area {
+	background-color: beige;
+	width: 100px;
+	height: 100px;
+	cursor: pointer; /* 마우스가 손가락 클릭 표시로 바뀜 */
+}
+
+#active-test:active {
+	background-color: blueviolet;
+	color: white;
+}
+
+#hover-test:hover {
+	background-color: blueviolet;
+	color: white;
+}
+
+/*============5. 상태 선택자============*/
+input[type=checkbox]:checked {
+	width: 30px;
+	height: 30px;
+}
+
+input[type=checkbox]:checked+label {
+	font-size: 30px;
+}
+
+input[name^=user]:focus {
+	background-color: pink;
+}
+
+button:enabled {
+	background-color: orange;
+}
+
+button:disabled {
+	background-color: beige;
+}
+
+
+
+
+
