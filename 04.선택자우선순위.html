@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>선택자 우선순위</title>
+		<style>
+			h1 {background-color: pink; color: yellow;}
+			h1 {background-color: red;} /*맨 여러 속성이 겹칠 때  마지막값으로 덮어씌어진다*/
+			#id1 {background-color: cadetblue;}/*background-color 3순위: 아이디선택자*/
+			.class1 {background-color: chartreuse; color: white;}/*background-color 4순위, color 1순위: 클래스선택자*/
+			div {background-color: darkgoldenrod !important; color: black;
+				width: 200px;
+				height: 200px;
+			}/*background-color 1순위: !important, color 2순위*/
+		</style>
+</head>
+<body>
+	<h1>선택자 우선순위</h1>
+	<p>
+	기본적으로 css는 위에서부터 아래로 적용됨<br>
+	동일한 요소를 다양한 선택자로 css가 부여된 경우 우선순위에 따라 적용됨<br>
+	!important -> 인라인스타일방식 -> 아이디선택자 -> 클래스선택자 -> 태그선택자
+	</p>
+
+	<!--background-color 2순위: 인라인스타일방식--> 
+	<div id="id1" class="class1" style="background-color: purple;">우선순위테스트</div>
+</body>
+</html>

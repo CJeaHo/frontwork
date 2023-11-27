@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
+	<title>글꼴관련 스타일</title>
+	<!--외부 폰트 글꼴 링크-->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bagel+Fat+One&family=Jua&family=Moirai+One&family=Monomaniac+One&family=Nova+Square&display=swap" rel="stylesheet">
+</head>
+<body>
+	<h1>글꼴관련 스타일 속성(font~)</h1>
+
+	<h3>font-family : 글꼴을 지정할 때 사용</h3>
+	<pre>선택자 {font-family: 글꼴명;}</pre>
+
+	<!-- p#ff${글꼴테스트$}*3 -->
+	<p id="ff1">외부 글꼴테스트1</p>
+	<p id="ff2">외부 글꼴테스트2</p>
+	<p id="ff3">내부 글꼴테스트3</p>
+	<p id="ff4">english</p>
+	<p id="ff5">ジャパニーズ</p>
+
+	<p>
+		<a href=https://fonts.google.com>외부 웹폰트 제공 사이트</a>
+	</p>
+
+	<hr>
+
+	<!------------------style------------------>
+	<style>
+		/* 내부 글꼴 */
+		#ff1 {font-family: Moirai One} /*외부 폰트 글꼴*/
+		#ff2 {font-family: Bagel Fat One;} /*외부 폰트 글꼴*/
+		#ff3 {font-family: 배달의민족 주아;}
+		#ff4 {font-family: Nova Square;}
+		#ff5 {font-family: Monomaniac One;}
+	</style>
+
+	
+
+	<h3>font-size : 글꼴의 크기를 변경할 때 사용</h3>
+	<pre>
+	선택자 {font-size: px|em|%;}
+
+	상대 크기 
+	em: 부모 요소의 크기를 기준으로 배수, 1배=1em=100% 1.5배=1.5em=150%
+	rem: 최상위 부모 요소의 크기를 기준으로 배수
+	% 기본 설정된 크기에서 상대적으로 크기 설정(초기설정100%)
+
+	절대 크기 
+	px, pt
+	</pre>
+
+	<ul>
+		<li id="fs1">고정크기 px테스트</li>
+		<li id="fs2">가변크기 em테스트</li>
+		<li id="fs3">가변크기 %테스트</li>		
+	</ul>
+
+	<hr>
+	<!------------------style------------------>
+	<style>
+		#fs1 {font-size: 30px;}
+		#fs2 {font-size: 1.5em;}
+		#fs3 {font-size: 150%;}
+	</style>
+
+	<h3>font-weight : 글꼴의 두께 지정</h3>
+	<pre>
+	선택자 {font-weight: normal|bold|bolder|lighter|100|400|900;}
+	</pre>
+
+	<ul>
+		<li>기본 굵기</li>
+		<li id="fw1">굵은 글꼴</li>
+		<li id="fw2">굵은 글꼴보다 더 굵게</li>
+		<li id="fw3">기본 굵기보다 더 가늘게</li>
+	</ul>
+
+	<hr>
+	<!------------------style------------------>
+	<style>
+		#fw1 {font-weight: bold;} /*700*/
+		#fw2 {font-weight:  900;}
+		#fw3 {font-weight: lighter;} /*100*/
+	</style>
+
+	<h3>font-variant : 영문텍스트 문구를 작은 대문자로 변경할 때 사용</h3>
+	<pre>선택자 {font-variant: small-caps;}</pre>
+
+	<p>I Love You</p>
+	<p><span style="font-variant: small-caps;">I Love You</span></p>
+
+	<hr>
+
+	<h3>font-style : 텍스트 문구를 기울이고자 할 때</h3>
+	<pre>선택자 {font-style: normal|italic|oblique;}</pre>
+
+	<p style="font-style: italic;">Lorem ipsum dolor sit amet consectetur.(필기체의 기울임)</p>
+	<p style="font-style: oblique;">Lorem ipsum dolor sit amet consectetur.(원래글자의 기울임)</p>
+
+
+
+
+
+
+
+
+
+	<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+</body>
+</html>
