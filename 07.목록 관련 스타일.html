@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>목록 관련 스타일</title>
+	<style>
+		#ul1 {
+			list-style-type: circle;
+			list-style-type: square;
+			list-style-type: none;
+			list-style-image: url(resources/img/체크.png);
+		}
+
+		#ol1 {
+			list-style-type: decimal-leading-zero;
+			list-style-type: upper-alpha;
+			list-style-type: lower-roman;
+			list-style-type: lower-greek;
+		}
+	</style>
+</head>
+<body>
+	<h1>목록 관련 스타일(list~)</h1>
+
+	<h3>list-style-type : 블릿기호를 변경시켜줄 때 사용</h3>
+	<h3>list-style-image : 블릿기호를 이미지로 적용할 때 사용</h3>
+	<h3>list-style-position : 블릿기호의 위치를 조정할 때 사용</h3>
+
+	<pre>
+		* 순서 없는 목록(ul)
+		선택자 {
+			list-style-type: disc|circle|square|none;
+		}
+
+		* 순서 있는 목록(ol)
+		선택자 {
+			list-style-type: decimal|decimal-leading-zero;
+			list-style-type: lower-alpha|upper-alpha;
+			list-style-type: lower-roman|upper-roman;
+		}
+	</pre>
+
+	<h4>순서없는 list</h4>
+	<ul id="ul1">
+		<li>목록1</li>
+		<li>목록2</li>
+		<li>목록3</li>
+		<li>목록4</li>
+	</ul>
+	<h4>순서있는 list</h4>
+	<ol id="ol1">
+		<li>목록5</li>
+		<li>목록6</li>
+		<li>목록7</li>
+		<li>목록8</li>
+	</ol>
+</body>
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>요소 배치 스타일</title>
+	<link rel="stylesheet" href="resources/css/12.style.css">
+</head>
+<body>
+	<!--
+		블럭요소: 한 줄 단위로 영역차지
+					줄바꿈이 적용되어 이미 존재하는 태그의 다음 줄에 영역이 잡힘
+					(p, pre, div ...)
+				
+		인라인요소: content(내용)영역에 해당하는 부분만 영역차지
+					  줄바꿈이 적용되지 않아 옆으로 잡힘
+					  (b, mark, img, span ...)
+
+		요소 영역 == content(내용) + padding(안쪽 여백) + border(테두리)
+		요소 바깥쪽 영역 == margin영역(바깥쪽 간격)
+	-->
+	<h1>요소 배치 스타일</h1>
+	<h3>width, height</h3>
+	<p>기본적으로 내용을 차지하는 content영역의 가로, 세로 길이 조절하는 스타일</p>
+
+	<h4>고정 크기(px)</h4>
+	<div id="test1" class="size-text"></div>
+
+	<h4>가변 크기(%)</h4>
+	<div id="test2" class="size-text"></div>
+
+	<hr>
+
+	<h3>display : 화면 배치 방법 변경</h3>
+	<pre>선택자 {display: inline|block|inline-block;}</pre>
+
+	<h4>display: inline</h4>
+	블럭요소를 인라인요소 형태로 바꿈 width, height가 적용 안 됨
+	<br><br>
+	<!--기존에 블럭요소인 div를 인라인요소로 바꾸기-->
+	<div class="display-test inline red">첫번째</div>
+	<div class="display-test inline yellow">두번째</div>
+	<div class="display-test inline pink">세번째</div>
+	<div class="display-test inline green">네번째</div>
+	<div class="display-test inline purple">다섯번째</div>
+	<!--alt + shift: 커서 위 아래를 다 이어줌-->
+
+	<h4>display: block</h4>
+	인라인요소를 블럭요소 형태로 바꿈 width, height가 적용됨
+	<!--기존에 인라인요소인 span을 블럭요소로 바꾸기-->
+	<span class="display-test block red">첫번째</span>
+	<span class="display-test block yellow">두번째</span>
+	<span class="display-test block pink">세번째</span>
+	<span class="display-test block green">네번째</span>
+	<span class="display-test block purple">다섯번째</span>
+
+	<h4>display: inline_block</h4>
+	width, heigt가 적용된 블럭요소가 인라인요소 형태로 옆으로 배치
+	<br><br>
+	<div class="display-test inline-block red">첫번째</div>
+	<div class="display-test inline-block yellow">두번째</div>
+	<div class="display-test inline-block pink">세번째</div>
+	<div class="display-test inline-block green">네번째</div>
+	<div class="display-test inline-block purple">다섯번째</div>
+
+	
+
+</body>
+</html>
