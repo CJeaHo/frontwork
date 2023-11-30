@@ -1,0 +1,35 @@
+/* 헤더 */
+header {
+   text-align: center;
+}
+/* 본문 */
+#animals {
+   margin: 0 auto;
+   width: 1200px;
+   display: flex;
+   flex-direction: row;
+   flex-wrap: wrap;
+   justify-content: space-evenly;
+}
+.animal-kind {
+   width: 330px;
+   height: 300px;
+   background: no-repeat center;
+   background-size: 100% 100%;
+}
+#animal1 {
+   background-image: url(/CSS3/resources/img/고양이.jpg);
+}
+#animal2 {
+   background-image: url(/CSS3/resources/img/강아지.jpg);
+}
+#animal3 {
+   background-image: url(/CSS3/resources/img/쿼카.jpg);
+}
+#animal4 {
+   background-image: url(/CSS3/resources/img/펭귄.jpg);
+}
+#animal5 {
+   background-image: url(/CSS3/resources/img/여우.jpg);
+}
+
