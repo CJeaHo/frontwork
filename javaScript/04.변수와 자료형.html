@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>변수와 자료형</title>
+   <style>
+      #area {
+         width: 300px;
+         border: 1px solid;
+         padding: 5px;
+      }
+   </style>
+</head>
+<body>
+   <h1>변수와 자료형</h1>
+   <h2>변수 선언시 var뿐만 아니라 let, const를 이용해서 선언 가능</h2>
+
+   <h3>* var, let, const의 차이점</h3>
+   <h4>1) 변수 선언 방법</h4>
+   <button onclick="diffDeclare();">변수 선언 방법</button>
+
+   <h4>2) 스코프(사용 가능한 범위)</h4>
+   <button onclick="diffScope();">스코프(사용 가능한 범위)</button>
+
+   <script>
+      function diffDeclare() {
+         // 1) var은 중복 선언 가능(단점), 재할당 가능
+         var userId = "user01";
+         console.log(userId);
+
+         var userId = "user02"; // 중복 선언 가능
+         console.log(userId);
+
+         userId = "user03"; // 재할당(덮어쓰기) 가능
+         console.log(userId);
+
+         console.log("------------------");
+
+         // 2) let은 중복 선언 불가능, 재할당 가능
+         let userPwd = "pass01";
+         console.log(userPwd);
+
+         // let userPwd = "pass02"; 중복 선언 불가
+
+         userPwd = "pass02"; // 재할당(덮어쓰기) 가능
+         console.log(userPwd);
+
+         console.log("------------------");
+
+         // 3) const는 중복 선언 불가, 재할당 불가(한번 초기화하면 값 변경 불가)
+         const userName = "홍길동";
+         console.log(userName);
+
+         // const userName = "홍길동2"; 중복 선언 불가
+
+         userName = "홍길동3"; 
+         console.log(userName); // 재할당 불가(콘솔 창에 오류뜸)
+
+         /*
+         var은 자유롭게 변수선언, 사용할 수 있다는 장점이 있지만 중복된 변수 남발과 의도치 않게 값이 변경되어 있을 수 있음
+         
+         let, const 위주로 쓰자
+         */
+
+         console.log("=================");
+      }
+
+      
+
+      function diffScope() {
+         // 1) var: 변수가 선언된 "함수 영역" 내에서 사용 가능
+
+         if(true) {
+            var name = "이길동";
+            console.log(name);
+         }
+
+         for(var i = 0; i<4; i++) {
+            console.log(name); // 같은 함수 내 영역이므로 이길동이 출력됨
+         }
+
+         console.log("i=" + i); // i도 출력 가능
+
+         console.log("------------------");
+
+         // 2) let, const: 변수가 선언된 '블럭{} 영역' 내에서만 사용 가능
+         
+         if(true) {
+            let hobby = "운동";
+            const gender = "M"
+         }
+         
+         // 사용 불가(콘솔 창에 오류뜸)
+         console.log(hobby); 
+         console.log(gender);
+      }
+   </script>
+   
+   <h3>* 변수 선언 위치에 따른 전역변수 / 지역변수</h3>
+   <script>
+      // window.onload: 해당 문서가 로딩이 다 된 후에 바로 실행시킴
+      // window.onload = function() {
+      //    console.log("문서가 로딩되자마자 실행")
+      // }
+
+      // 특정 함수영역 밖에 선언된 변수는 전역변수임(어디든 사용 가능)
+      var declareVar = "var로 전역변수";
+      let declareLet = "let로 전역변수";
+      const declareConst = "const로 전역변수";
+
+      // declareNone = "그냥 전역변수"; // 아무런 선언을 안한 변수는 뭘해도 전역변수(지역안에서 선언해도)
+
+      window.onload = function() {
+         // console.log(declareVar);
+         // console.log(declareLet);
+         // console.log(declareConst);
+         // console.log(declareNone);
+
+         // 지역변수 선언
+         var declareVar = "var로 지역변수";
+         let declareLet = "let로 지역변수";
+         const declareConst = "const로 지역변수";
+         console.log(declareVar);
+         console.log(declareLet);
+         console.log(declareConst);
+         // 지역변수명과 전역 변수명이 서로 같을 경우 출력순서: 지역변수 > 전역변수 
+
+         // 전역변수에 접근하려면 window. 또는 this.로 접근가능 (단, var로 선언한 것만 가능)
+         console.log(window.declareVar);
+         console.log(this.declareVar);
+         
+         // undefined
+         console.log(window.declareLet);
+         console.log(this.declareConst);
+
+         declareNone = "얘는 뭘까요?";
+         console.log("1." +  declareNone);
+         console.log("2." + this.declareNone);
+         console.log("=================================")
+      }
+
+      /* 변수 우선순위
+      class A {
+         String name = "부모";
+      }
+
+      class B extends A {
+         String name = "자식";
+
+         String me() {
+            String name = "메소드안";
+            System.out.println(name); 1.지역변수 먼저(메소드안) 2. this -> 자식 3. super -> 부모
+         }
+      }
+      */
+
+   </script>
+
+   <hr>
+
+   <h3>* 자료형</h3>
+   <p>
+      Dynamic Type: 변수 선언시 자료형을 별도로 지정하지 않음(자료형의 개념이 없는건 아님)<br>
+      => 변수별로 타입이 지정되지 않고, 대입되는 값에 따라 타입이 결정됨
+   </p>
+
+   <h4>자바스크립트의 자료형</h4>
+   <ul>
+      <li>string(문자열)</li>
+      <li>number(숫자)</li>
+      <li>boolean(논리값)</li>
+      <li>object(객체)</li>
+      <li>function(함수)</li>
+      <li>underfind(초기화가 안된 변수)</li>
+   </ul>
+
+   <button onclick="typeTest();">자료형 테스트</button>
+   <div id="area"></div>
+   <script>
+      function typeTest() {
+         const name = "홍길동";
+         const age = 20;
+         const bool = false;
+         const hobby = ["영화", "js공부", "잠자기"];
+         const divE1 = document.getElementById("area"); // = document.querySelector("#area");
+         const user = {
+            name : "애드인 에듀",
+            age : 27,
+            id : "addinedu"
+         };
+
+         const testFn = function() {
+            alert("함수 호출");
+         }
+
+         let nolet;
+
+         console.log(typeof name, name);
+         console.log(typeof age, age);
+         console.log(typeof bool, bool);
+         console.log(typeof hobby, hobby);
+         console.log(typeof divE1, divE1);
+         console.log(typeof user, user);
+         console.log(typeof testFn, testFn);
+         console.log(typeof nolet, nolet);
+
+         // 화면에 출력 시 텍스트로 출력되기 때문에 콘솔과 다르게 보일 수 있음
+         divE1.innerHTML = `${typeof name}, ${name}<br>`;
+         divE1.innerHTML += `${typeof age}, ${age}<br>`;
+         divE1.innerHTML += `${typeof bool}, ${bool}<br>`;
+         divE1.innerHTML += `${typeof hobby}, ${hobby}<br>`;
+         divE1.innerHTML += `${typeof divE1}, ${divE1}<br>`;
+         divE1.innerHTML += `${typeof user}, ${user}<br>`;
+         divE1.innerHTML += `${typeof testFn}, ${testFn}<br>`;
+         divE1.innerHTML += `${typeof nolet}, ${nolet}<br>`;
+         
+         // 백틱 사용 안할 시 divE1.innerHTML =typeof name + ", " + name + "<br>";
+         console.log("---------------------------------------");
+         
+         // 백틱(`) 사용 시 \n을 사용하지 않아도 줄바꿈이 일어남
+         // "", '' 말고 ``을 써도 됨
+         // `${변수명}` => 변수나 표현식을 표현할 수 있음
+         const name2 = `Hello ${name}`; 
+         console.log(name2);
+      }
+   </script>
+</body>
+</html>

@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>문자열과 숫자</title>
+   <style>
+      .area {
+         width: 300px;
+         border: 1px solid;
+         padding: 5px;
+      }
+   </style>
+</head>
+<body>
+   <h1>문자열과 숫자</h1>
+   
+   <h3>* 문자열 관련 메소드</h3>
+   <button onclick="stringTest();">문자열처리 메소드</button>
+   <div id="area1" class="area"></div>
+
+   <script>
+      function stringTest() {
+         const area1 = document.getElementById("area1");
+         const str1 = "Hello World";
+
+         area1.innerHTML = "str1: " + str1 + "<br>";
+         area1.innerHTML = `str1: ${str1}<br>`;
+
+         area1.innerHTML += `toUpperCase(): ${str1.toUpperCase()}<br>`;
+         area1.innerHTML += `toLowerCase(): ${str1.toLowerCase()}<br>`;
+         area1.innerHTML += `문자열의 길이: ${str1.length}<br>`;
+         area1.innerHTML += `--------------------------------<br>`;
+
+         for(var i = 0; i<str1.length; i++) {
+            area1.innerHTML += `${i}번 인덱스: ${str1[i]}<br>`; // area1.innerHTML += `${i}번 인덱스: ${str1.charAt(i)}<br>`;
+         }
+         area1.innerHTML += `--------------------------------<br>`;
+
+         area1.innerHTML += `앞에서부터 첫 'l'의 위치: ${str1.indexOf("l")}<br>`;
+         area1.innerHTML += `뒤에서부터 첫 'l'의 위치: ${str1.lastIndexOf("l")}<br>`;
+         area1.innerHTML += `앞에서부터 첫 'a'의 위치: ${str1.indexOf("a")}<br>`; // 없는 단어는 -1
+         // 메소드 대소문자 안지키면 출력안되네
+
+         area1.innerHTML += `--------------------------------<br>`;
+         area1.innerHTML += `subString(시작 인덱스): ${str1.substring(6)}<br>`; //숫자부터 끝까지
+         area1.innerHTML += `subString(시작 인덱스, 끝 인덱스): ${str1.substring(0,5)}<br>`; //시작 숫자부터 끝 숫자까지
+         
+         const str2 = "사과, 바나나, 복숭아, 키위";
+         const fruits = str2.split(","); // 콤마(,)를 기준으로 나눠 배열로 
+
+         area1.innerHTML += `str2: ${str2}<br>`;
+         area1.innerHTML += `str2의 자료형: ${typeof str2}<br>`; // string
+         area1.innerHTML += `fruits: ${fruits}<br>`;
+         area1.innerHTML += `fruits의 자료형: ${typeof fruits}<br>`; // object
+      }
+   </script>
+
+   <hr>
+
+   <h3>* 문자열 관련 html 메소드</h3>
+   <button onclick="stringhtmlTest();">문자열 html 메소드</button>
+   <div id="area2" class="area"></div>
+   <script>
+      function stringhtmlTest() {
+         let area2 = document.getElementById("area2");
+
+         let str = "javascript";
+         area2.innerHTML = `str: ${str}<br>`;
+         area2.innerHTML += `bold(): ${str.bold()}<br>`;
+         area2.innerHTML += `italics(): ${str.italics()}<br>`;
+         area2.innerHTML += `bold().italics(): ${str.bold().italics()}<br>`; // 동시 적용은 .으로 연결
+         area2.innerHTML += `small(): ${str.small()}<br>`;
+         area2.innerHTML += `sub(): ${str.sub()}<br>`; // 아래첨자
+         area2.innerHTML += `sup(): ${str.sup()}<br>`; // 위첨자
+         area2.innerHTML += `link(): ${str.link("이동할 주소")}<br>`; // 아래첨자
+      }
+   </script>
+
+   <hr>
+
+   <h3>* 숫자 관련 html 메소드</h3>
+   <button onclick="mathTest();">숫자 html 메소드</button>
+   <div id="area3" class="area"></div>
+   <script>
+      function mathTest() {
+         const area3 = document.getElementById("area3");
+
+         // 자바스크립트 Math내장 객체 제공
+         area3.innerHTML = `절대값: ${Math.abs(-1234)}<br>`;
+         area3.innerHTML += `랜덤값: ${Math.random()}<br>`;
+         area3.innerHTML += `반올림: ${Math.round(123.456)}<br>`; // 무조건 정수로 (몇번째까지 반올림 그런게 없다)
+         area3.innerHTML += `버림: ${Math.floor(123.789)}<br>`; 
+         area3.innerHTML += `올림: ${Math.ceil(123.123)}<br>`; 
+
+
+      }
+   </script>
+
+   <hr>
+
+   <h3>* 문자열과 숫자간의 산술연산 / 형변환</h3>
+
+   <button onclick="arithmetric();">산술 연산</button>
+   <div id="area4" class="area"></div>
+
+   <script>
+      function arithmetric() {
+         let test1 = 7 + 7;    // 14
+         let test2 = "7" + 7;  // "77"
+         let test3 = "7" + 7 + 7;   // "777"
+         let test4 = "7" + (7 + 7); // "714"
+
+         console.log(`test1= ${test1}`);
+         console.log(`test2= ${test2}`);
+         console.log(`test3= ${test3}`);
+         console.log(`test4= ${test4}`);
+         
+         const area4 = document.getElementById("area4");
+         area4.innerHTML = `test1= ${test1}, test2= ${test2}, test3= ${test3}, test4= ${test4}`
+
+      }
+   </script>
+</body>
+</html>
