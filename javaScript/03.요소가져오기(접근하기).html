@@ -87,7 +87,7 @@
 
          var blueColor = 153
 
-         for(var i = 0; i<list.length; i++) {
+         for(var i=0; i<list.length; i++) {
             list[i].innerHTML = "안녕하세요" + (i+1);
             list[i].style.backgroundColor = "rgb(150, 100, " + blueColor + ")";
 
@@ -123,7 +123,7 @@
          var area3 = document.getElementById("area3");
 
          // 체크된 것만 가져오기
-         for(var i = 0; i<hobby.length; i++) {
+         for(var i=0; i<hobby.length; i++) {
             console.log(hobby[i].checked);
             if(hobby[i].checked) { // 체크된 건
                console.log(hobby[i].value); // 값으로 나타내기
@@ -151,10 +151,10 @@
          console.log(test);
 
          var div1 = document.getElementById("class1");
-         for(var i = 0; i<test.length; i++) {
+         for(var i=0; i<test.length; i++) {
             console.log(test[i]);
             div1.innerText += test[i] + "<br>";
-            // div1.innerHTML += test[i] + "<br>";
+            div1.innerHTML += test[i] + "<br>";
          }
       }
    </script>
@@ -180,11 +180,11 @@
          // document.querySelectorAll("선택자") => 선택된 요소들을 배열에 담아서 반환
 
          var divE1 = document.querySelector("#test2");
-         var h2E1 = document.querySelectorAll(".test>h2"); //  
+         var h2E1 = document.querySelectorAll(".test>h2"); //  h2를 가지고옴
          var spanE1 = document.querySelector(".test+span"); // span을 가지고옴
 
          console.log(divE1.innerHTML);
-         for(var i = 0; i<h2E1.length; i++) {
+         for(var i=0; i<h2E1.length; i++) {
             console.log(h2E1[i].innerHTML);
          }
          console.log(spanE1.innerHTML)
@@ -210,7 +210,7 @@
 
       function selectAll() {
          var p2 = document.querySelectorAll(".cla1");
-         for(var i = 0; i<p2.length; i++){
+         for(var i=0; i<p2.length; i++){
             p2[i].style.color = "yellowgreen";
          }
 

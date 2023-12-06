@@ -76,7 +76,7 @@
             console.log(name);
          }
 
-         for(var i = 0; i<4; i++) {
+         for(var i=0; i<4; i++) {
             console.log(name); // 같은 함수 내 영역이므로 이길동이 출력됨
          }
 
@@ -172,7 +172,7 @@
       <li>boolean(논리값)</li>
       <li>object(객체)</li>
       <li>function(함수)</li>
-      <li>underfind(초기화가 안된 변수)</li>
+      <li>undefined(정의되지 않은 변수)</li>
    </ul>
 
    <button onclick="typeTest();">자료형 테스트</button>
@@ -215,11 +215,11 @@
          divE1.innerHTML += `${typeof testFn}, ${testFn}<br>`;
          divE1.innerHTML += `${typeof nolet}, ${nolet}<br>`;
          
-         // 백틱 사용 안할 시 divE1.innerHTML =typeof name + ", " + name + "<br>";
+         // 백틱 사용 안할 시 divE1.innerHTML = typeof name + ", " + name + "<br>";
          console.log("---------------------------------------");
          
-         // 백틱(`) 사용 시 \n을 사용하지 않아도 줄바꿈이 일어남
          // "", '' 말고 ``을 써도 됨
+         // 백틱(`) 사용 시 \n을 사용하지 않아도 줄바꿈이 일어남
          // `${변수명}` => 변수나 표현식을 표현할 수 있음
          const name2 = `Hello ${name}`; 
          console.log(name2);
