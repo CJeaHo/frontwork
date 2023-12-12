@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+   <title>요소 선택</title>
+</head>
+<body>
+   <h1>기본 선택자를 이용해서 요소 선택</h1>
+
+   <h3>* 아이디 선택자</h3>
+   <p>특정 고유한 아이디값을 가진 요소 하나만 선택하고자할 때</p>
+   
+   <h1 id="id1">테스트1</h1> <!--자바스크립트 방식-->
+   <h2 id="id2">테스트1</h2> <!--jQuery 방식-->
+
+    <script>
+      $(() => {
+         // 자바스크립트 방식
+         document.getElementById(`id1`).style.color = "red";
+         document.getElementById("id1").innerHTML = 'h1변경';
+
+         // jQuery 방식
+         /*
+         $("#아이디명") // '', ``, "" 상관없음
+         .css(): 선택된 요소의 style 지정
+         .html(): 선택된 요소의 innerHTML과 관련된 기능을 수행하는 메소드
+         */
+        $(`#id2`).css("color", `green`);
+        $('#id2').html('h2변경');
+
+        console.log(document.getElementById('id1'));
+        console.log($("#id2"));
+      })
+    </script>
+
+    <h3 id="test">* 태그 선택자</h3>
+    <p>java</p>
+    <p>oracle</p>
+    <p>HTML</p>
+
+    <h5>내용1</h5>
+    <h5>내용2</h5>
+    <h5>내용3</h5>
+
+    <script>
+      $(() => {
+         /*javascript
+         const p = document.getElementsByTagName('p');
+         // p태그 전체에 걸기위해 for문을 걸어줌
+         for(let i in p) {
+            p[i].style.color = `pink`;
+         }
+         */
+
+         // jQuery
+         $("h5").css(`color`, "blue");
+         // $("h5, p, #test").css(`color`, "magenta"); // 적용할 속성들을 한번에 적으면 됨
+      })
+
+      </script>
+
+      <h3>* 클래스 선택자</h3>
+      <p>클래스 속성을 가진 요소를 선택하고자할 때</p>
+
+      <h4 class="item">class1</h4>
+      <h4 class="item select">class2</h4>
+      <h4 class="item select">class3</h4>
+
+      <script>
+         $(() => {
+            $('.select').css('background', 'skyblue');
+            $(`.item`).click(() => { // .click 이벤트 실행
+               alert('클릭됨');
+            });
+            
+            // const items = document.getElementsByClassName('item');
+            // for(let i in items) {
+            //    items[i].style.color = `green`;
+            //    items[i].onclick = function() {
+            //       console.log("클릭됨");
+            //    };
+            // }
+         })
+      </script>
+
+</body>
+</html>
