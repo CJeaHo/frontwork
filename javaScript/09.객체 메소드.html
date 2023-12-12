@@ -10,7 +10,7 @@
          padding: 5px;
       }
       .small{height: 200px;}
-      .big{height: 300px;}
+      .big{height: 400px;}
    </style>
 </head>
 <body>
@@ -28,7 +28,7 @@
 
 
          const dog =  {
-            name : `똥개`,
+            name : `바둑이`,
             'kind' : '비글',
             "eat" : function(food) {
                area1.innerHTML += 'eat메소드가 호출됨<br>';
@@ -77,7 +77,7 @@
 
    <h3>* in과 with키워드</h3>
    <p>
-      - in: 객체 내의 해당 속성이 있는지 없는지 확인해주는 키워드(존재하면 true, 아니면 false)
+      - in: 객체 내의 해당 속성이 있는지 없는지 확인해주는 키워드(존재하면 true, 아니면 false)<br>
       - with: 객체의 속성에 접근할 때 객체명을 생략할 수 있는 키워드(코드를 줄여주는 키워드)
    </p>
 
@@ -112,6 +112,7 @@
 
          // 그냥 객체만 넣으면 객체 속성에 대해 알려주지만 객체 안에 toString 함수가 있다면 오버라이딩 되어 toString 함수 실행
          area2.innerHTML += `${student}<br>`; 
+         area2.innerHTML += `${student.toString()}<br>`;
          area2.innerHTML += `name속성이 있는가? ${"name" in student}<br>`;
          area2.innerHTML += `있다면 이름은? ${student.name}<br>`;
          area2.innerHTML += `age속성이 있는가? ${`age` in student}<br><br>`;
@@ -122,6 +123,7 @@
 
          area2.innerHTML += student.getSum() + '<br>';
          area2.innerHTML += student.getAvg() + '<br>';
+         
 
       area2.innerHTML += `<hr>`;
          
@@ -138,7 +140,6 @@
    </script>
 
    <h3>* 객체의 속성 추가 및 제거</h3>
-   <p>객체의 속성 중 함수 자료형인 속성</p>
    <button onclick="test3();">실행확인</button>
    <div id="area3" class="area small"></div>
 
@@ -154,6 +155,7 @@
          people.age = 20;
 
          console.log(people);
+         area3.innerHTML = people;
          people.dream = "엄청부자";
          
 

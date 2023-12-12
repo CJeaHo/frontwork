@@ -108,16 +108,20 @@
             "company" : "애드인애듀"
          };
 
-         // 배열에선 for in -> 인덱스 번호
-         // 객체에선 for in -> key값
+         // 배열에서 for in -> 인덱스 번호
+         // 객체에서 for in -> key값
          for(key in game) {
             // console.log(game);
-            // console.log(game[key]);
-            console.log(game.title);
-            console['log'](game['price']);
+            //console.log(key);
+            console.log(game[key]);
+
+            // console.log(game.title);
+            // console['log'](game['price']);
 
             area3.innerHTML += `${key}: ${game[key]}<br>`
          }
+
+         
       }
    </script>
 

@@ -42,7 +42,7 @@
          - 창이름: 창이름(target), 
            창이름이 같은게 이미 열려있으면 새롭게 열리지 않고 이미 열려있는 곳에 새로고침됨(가능한 창이름은 다르게)
          - 창의 특성: 새 창의 넓이, 높이, 주소창 여부, 툴바 여부, 스크롤바 여부 등등 새 창의 특성
-           ※ 창의 특성을 넣지 않으면 새 탭에서 열리고 특성을 넣으면 새창에 열림
+           ※ 창의 특성을 넣지 않으면 새 탭에서 열리고 특성을 넣으면 새 창에 열림
            */
 
          //   window.open("http://www.naver.com", "네이버");
@@ -83,6 +83,7 @@
 
          // 큐브모양: 변수
          // 사각형 : 함수
+         set
 
          setTimeout(() => {
             myWindow.close(); // 창 닫는 함수
@@ -169,13 +170,13 @@
       > 텍스트 노드(Text Node): 태그 내에 기록되는 내용<br><br>
 
       텍스트 노드가 존재하는 요소(시작태그와 종료태그가 한 쌍으로 이루어져 있음): div, h~, li, p, a<br>
-      텍스트 노드가 존재하지 않는 요소(시작태그만 이뤄져 있음): input, imag, br, hr
+      텍스트 노드가 존재하지 않는 요소(시작태그만 이뤄져 있음): input, img, br, hr
    </p>
 
    <h3>* 노드(요소) 생성과 관련된 메서드</h3>
-   <h4>- 텍스트노드가 존재하는 노드 생성(시작과 종료태그)</h4>
+   <h4>- 텍스트 노드가 존재하는 노드 생성(시작과 종료태그)</h4>
 
-   <button onclick="test4();">실행확인</button>
+   <button onclick="test4();">요소생성1</button>
    <div id="area2"></div>
    <script>
       function test4() {
@@ -203,7 +204,7 @@
    </script>
 
    <h4>- 텍스트 노드가 존재하지 않는 노드 생성(시작태그만 존재)</h4>
-   <button onclick="test5();">실행확인</button>
+   <button onclick="test5();">요소생성2</button>
    <div id="area3" class="divclass"></div>
 
    <script>
@@ -221,7 +222,7 @@
    </script>
 
    <h3>* 노드(요소) 삭제와 관련된 메소드</h3>
-   <button onclick="test6();">실행확인</button>
+   <button onclick="test6();">요소삭제</button>
 
    <script>
       // remove()
