@@ -20,16 +20,16 @@
    <h3>* 자손/후손 메소드: 기준이 되는 요소의 하위 요소들을 선택할 수 있는 메소드</h3>
 
    <div class="wrap">
-      <div>div(span증조할엄빠)
-         <ul>ul(span할엄빠)
-            <li>li(span엄빠)
-               <span>span</span>
+      <div>div(.wrap자손)
+         <ul>ul(.wrap손주, div자손)
+            <li>li(.wrap증손, div손주, ul자손)
+               <span>span(.wrap현손, div증손, ul손주, li자손)</span>
             </li>
          </ul>
       </div>
-      <div>div(span할엄빠)
-         <p>p(span엄빠)
-            <span>span</span>
+      <div>div(.wrap자손)
+         <p>p(.wrap손주, div자손)
+            <span>span(.wrap증손, div손주, p자손)</span>
          </p>
       </div>
    </div>
@@ -38,7 +38,6 @@
       <h4>- $('선택자').children()</h4>
       선택된 요소의 자손(바로 하위) 요소들 선택
    
-
       <h4>- $('선택자').childrens('선택자')</h4>
       선택된 요소의 자손들 중 제시한 값과 일치하는 요소들만 선택
 
@@ -56,6 +55,7 @@
 
          $('.wrap').children().css(style1);
          $('.wrap').children().children().css(style2);
+         // $('.wrap').children().children().children().css(style3);
          $('.wrap').children().children('ul').css(style3);
          $('.wrap').find('li').css(style4);
          $('.wrap').find('span').css(style5);
