@@ -74,5 +74,64 @@
       })
     })
   </script>
+
+  <br><br>
+
+  <button class="btn btn-outline-success">회원가입</button>
+  <button class="btn btn-outline-danger">초기화</button>
+
+  <br><br>
+
+  <form action="">
+    <div class="mb-3">
+      <label for="exampleFormControlInput1" class="form-label">ID</label>
+      <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="영문자,숫자,특수기호로만 5글자이상">
+    </div>
+    <div class="mb-3">
+      <label for="exampleFormControlInput1" class="form-label">PASSWORD</label>
+      <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="영문자,숫자,특수기호로만 9글자이상">
+    </div>
+    <div class="mb-3">
+      <label for="exampleFormControlInput1" class="form-label">Email address</label>
+      <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+    </div>
+    <button type="button" class="btn btn-secondary">submit</button>
+  </form>
+
+  <br><br>
+
+  <!-- Button trigger modal -->
+  <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+    로그인
+  </button>
+
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title fs-5" id="exampleModalLabel">이름입력</h4>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <form action="">
+          <div class="modal-body">
+              <div class="mb-3">
+                <label for="exampleFormControlInput1" class="form-label">ID</label>
+                <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="영문자,숫자,특수기호로만 5글자이상">
+              </div>
+              <div class="mb-3">
+                <label for="exampleFormControlInput1" class="form-label">PASSWORD</label>
+                <input type="password" class="form-control" id="exampleFormControlInput1" placeholder="영문자,숫자,특수기호로만 9글자이상">
+              </div>
+          </div>
+          <div class="modal-footer">
+            <button type="submit" class="btn btn-primary">로그인</button>
+            <button type="reset" class="btn btn-warning">초기화</button>
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">닫기</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
 </body>
 </html>
