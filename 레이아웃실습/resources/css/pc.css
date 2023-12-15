@@ -1,0 +1,76 @@
+/* body */
+body {
+   width: 1000px;
+   background-color: beige;
+}
+
+/* header */
+header {
+   height: 500px;
+}
+#logo {
+   margin-left: 1%;
+   float: left;
+   margin-bottom: 5px;
+}
+#login {
+   float: right;
+   margin-top: 5px ;
+   height: 20px;
+}
+#titleImg {
+   clear: both;
+   width: 100%;
+   height: 436px;
+}
+
+/* nav */
+.navi {width: 100%; height: 100%; background-color: navy;}
+.navi>a {display: inline-block; width: 245.79px; color: white; text-align: center; line-height: 60px;}
+.navi>a:active {
+   color: yellow;
+}
+.navi>a:hover {
+   background-color: rgb(44, 44, 138);
+}
+
+/* section */
+section {
+   width: 700px;
+}
+h3 {
+   margin-top: 25px;
+   font-size: 30px;
+}
+h4 {
+   margin-top: 15px;
+   margin-bottom: 15px;
+   font-size: 20px;
+   color: skyblue;
+}
+
+/* article */
+p{
+   margin-bottom: 13px;
+}
+
+/*aside*/
+aside>img {
+   width: 329px;
+   border-radius: 2%;
+}
+
+/* footer */
+footer {
+   font-size: 13px;
+   border: 1px solid navy;
+   background-color: navy;
+   margin-top: 10px;
+   color: aliceblue;
+}
+
+footer>p {
+   width: 900px;
+   color: white;
+   margin-top: 10px;
+}
