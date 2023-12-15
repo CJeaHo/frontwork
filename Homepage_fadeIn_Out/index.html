@@ -4,59 +4,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <link href="resources/css/homepage.css" rel="stylesheet"/>
+    <script src="resources/js/jQueryUser.js"></script>
     <title>HOMEPAGE</title>
-    <style>
-      body {
-         margin: auto;
-         width: 1000px;
-      }
-      header {
-         display: flex;
-      }
-      header>div {
-         /* display: flex; */
-         width: 40%;
-         height: 50px;
-         line-height: 80px;
-      }
-      nav {
-         width: 60%;
-      }
-      .nav {
-         width: 100%;
-         list-style: none;
-         display: flex;
-      }
-      .nav>li {
-         width: 100%;
-         text-align: center;
-      }
-      .submenu {
-         width: 80%;
-      }
-      .submenu>li {
-         width: 100%;
-         display: none;
-      }
-      #imgslide {
-         overflow: hidden;
-         position: relative;
-         width: 100%;
-         height: 100%;
-      }
-      #imgslide>div {
-         width: 100%;
-         height: 100%;
-         display: flex;
-         animation: transform 1s ease-in-out;
-      }
-      #imgslide>div>img {
-         width: 100%;
-         height: 100%;
-         object-fit: cover;
-      } 
-    </style>
 </head>
 <body>
     <header>
@@ -65,8 +16,8 @@
         </div>
         <nav>
           <ul class="nav">
-            <li>여행가이드 소개</a></li>
-            <li>국내여행지
+            <li><a href="#">여행가이드 소개</a></li>
+            <li><a href="#">국내여행지</a>
               <ul class="submenu">
                 <li><a href="#">강원도</a>
                 <li><a href="#">충청도</a></li>
@@ -74,7 +25,7 @@
                 <li><a href="#">전라도</a></li>
               </ul>
             </li>  
-            <li>해외여행지
+            <li><a href="#">해외여행지</a>
               <ul class="submenu">
                 <li><a href="#">미국/캐나다</a></li>
                 <li><a href="#">유럽</a></li>
@@ -85,7 +36,6 @@
           </ul>
         </nav>
       </header>
-      
       <article id="content">
         <section id="imgslide">
             <div>
@@ -154,37 +104,11 @@
             <li><a href="#">개인정보처리방침</a></li>
         </ul>
         <p>
-          <b>AddInEdu</b><br>
+          <b>AddInEdu</b><br><br>
           서울특별시 금천구 가산디지털2로 115, 308호(가산동, 대륭테크노타운3차) | 대표자  박보연 | 사업자번호  847-87-01961 | 고객센터 02-552-8565<br>
           서울특별시 금천구 가산디지털2로 108, 212~213호(가산동, 뉴T캐슬)<br>
           Copyright ⓒ 애드인에듀 KOREA All rights reserved.
-        </p>
+        </p> 
       </footer>
-
-      <!-- header -->
-      <script>
-         $(() => {
-            $('.nav>li').eq(1).click(function(){
-               const li = $('.submenu').eq(0).children();
-               if(li.css('display') == 'none') {
-                  li.slideDown().css({'list-style': 'none', 'text-align':'left', 'padding': '13%'});
-               } else {
-                  li.slideUp();
-               }
-            })
-            $('.nav>li').eq(2).click(function(){
-               const li = $('.submenu').eq(1).children();
-               if(li.css('display') == 'none') {
-                  li.slideDown().css({'list-style': 'none', 'text-align':'left', 'padding': '13%'});
-               } else {
-                  li.slideUp();
-               }
-            })
-         })
-      </script>
-      <script>
-      
-      메인
-      </script>
 </body>
 </html>
