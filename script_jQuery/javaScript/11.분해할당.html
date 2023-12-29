@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>분해할당</title>
+</head>
+<body>
+   <h1>분해할당</h1>
+   <p>배열의 객체에 들어있는 속성값들을 각각 변수에 할당</p>
+
+   <h4>콘솔로 확인</h4>
+   <script>
+      (function () {
+         /*
+         (구조)분해 할당 종류
+         1. 배열의 분해 할당
+         2. 객체의 분해 할당
+         */
+
+         // 1. 배열의 분해 할당
+         const points = [20, 30, 40];
+         
+         // ES5버전
+         const x1 = points[0];
+         const y1 = points[1];
+         const z1 = points[2];
+         console.log(`ES5: x=${x1}, y=${y1}, z=${z1}`);
+
+         // ES6버전
+         const [x2, y2, z2] = points;
+         console.log(`ES6: x=${x2}, y=${y2}, z=${z2}`);
+         
+         // 인덱스 N번째 값 무시하기 
+         // ex) 1번째 값 무시하기
+         const [x3, , z3] = points;
+         console.log(`ES6: x=${x3}, z=${z3}`);
+         
+         // ex) 0번째 2번째 값 무시하고 없는 값 추가
+         const [x4, , ,a4] = points;
+         console.log(`ES6: x=${x4}, a=${a4}`);
+
+         const [x5, ,] = points;
+         console.log(`ES6: x=${x5}`);
+
+         // rest연산자(...): 여러개의 인자값(배열로 들어옴)
+         // 매개변수가 어떤 것이 몇개가 들어올지 모를 때, 자바의 ...args같은 것
+         
+         /*
+         자바
+         void method(...args) {}
+         */
+         const [x6, x7, ...rest] = [10, 20, 30, 40, 50, 60, 70]; // 최소 매개변수 2개(x6, x7)는 들어가야한다
+         console.log(`ES6 rest: [0]= ${x6}, [1]= ${x7}, rest= ${rest}`);
+      })();
+
+      // 2. 객체의 분해 할당
+      const car = {
+         company: '삼성',
+         color: 'black',
+         model: 'sm7'
+      };
+
+      // ES5버전
+      const company1 = car.company;
+      const color1 = car.color;
+      const model1 = car.model;
+      console.log(`ES5: company=${company1}, color=${color1}, model=${model1}`);
+      
+      // ES6버전
+      const {company, color, model} = car;
+      console.log(`ES6: company=${company}, color=${color}, model=${model}`);
+
+      const {company: company2, color: color2, model: model2} = car;
+      console.log(`ES6: company=${company2}, color=${color2}, model=${model2}`);
+
+      const fun1 = function(car) {
+         const {company: company3, color: color3} = car;
+         console.log(`ES6: company=${company3}, color=${color3}`);
+      };
+      fun1(car);
+
+      // 화살표 함수로
+      const fun2 = ({company: company4, color: color4}) => {
+         console.log(`ES6: company=${company4}, color=${color4}`);
+      };
+      fun2(car);
+
+   </script>
+</body>
+</html>

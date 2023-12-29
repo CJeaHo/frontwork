@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+   <title>순회 메소드, 부모/조상</title>
+   <style>
+      .wrap, .wrap * {
+         border: 1px solid lightgray;
+         color: gray;
+         display: block;
+         padding: 5px;
+         margin: 15px;
+      }
+   </style>
+</head>
+<body>
+   <h1>순회 메소드</h1>
+   <h3>* 부모/조상(anscestors) 메소드: 기준이 되는 요소의 상위 요소들을 선택할 수 있는 메소드</h3>
+
+   <div class="wrap">
+      <div>div(span증조부모, li조부모, ul부모)
+         <ul>ul(span조부모, li부모)
+            <li>li(span부모)
+               <span>span</span>
+            </li>
+         </ul>
+      </div>
+      <div>div(span조부모, p부모)
+         <p>p(span부모)
+            <span>span</span>
+         </p>
+      </div>
+   </div>
+
+   <p>
+      <h4>- $('선택자').parent()</h4>
+      선택된 요소의 부모(바로 상위) 하나만 선택
+      
+      <h4>- $('선택자').parents()</h4>
+      선택된 요소의 조상(상위요소들 전체) 모두 선택
+
+      <h4>- $('선택자').parents('선택자')</h4>
+      선택된 요소의 상위요소들 중 제시한 값과 일치하는 요소들만 선택
+
+      <h4>- $('선택자').parentsUntil('선택자')</h4>
+      선택된 요소 다음부터 제시한 값 이전까지 모든 상위요소들 선택
+   </p>
+
+   <script>
+      $(() => {
+         $('span').parent().css({color: 'red', border: '2px solid red'});
+         $('li').parents().css('color', 'blue');
+         $('li').parents('div').css('border', '2px dashed magenta');
+         $('span').parentsUntil('div').css('color', 'orange');
+      })
+   </script>
+</body>
+</html>

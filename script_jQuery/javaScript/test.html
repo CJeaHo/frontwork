@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>test</title>
+</head>
+<body>
+   <form action="member.jsp" method="post" name="regFrm">
+      <table border="1" width="300">
+         <tr>
+            <td colspan="2" align="center">회원가입</td>
+         </tr>
+         <tr>
+            <td width="30%">아이디</td>
+            <td width="70%"><input name="id" size="24"></td>
+         </tr>
+         <tr>
+            <td>비밀번호</td>
+            <td><input type="password" name="pw" size="24"></td>
+         </tr>
+         <tr>
+            <td>비밀번호 확인</td>
+            <td><input type="password" name="repw" size="24"></td>
+         </tr>
+         <tr>
+            <td colspan="2" align="center">
+               <input type="button" value="회원가입" onclick="inputCheck();"> <!--type="submit"=> 바로 action에 지정한 서버로 넘어간다-->
+               <input type="reset" value="초기화">
+            </td>
+         </tr>
+      </table>
+   </form>
+
+   <script>
+      function inputCheck() {
+         var id = document.getElementsByName("id")[0];
+         let f = document.regFrm;
+         if(id.value == "") {
+            alert("아이디를 입력해 주세요")
+            id.focus();
+            return;
+         }
+         // document.regFrm.submit();
+
+         if(f.pw.value != f.repw.value) {
+            alert("비밀번호가 일치하지 않습니다")
+            f.repw.focus();
+            f.repw.value = "";
+            
+            return;
+         }
+         // document.regFrm.submit();
+      }
+   </script>
+</body>
+</html>

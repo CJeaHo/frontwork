@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js"></script>
+  <title>ani_nav</title>
+  <style>
+    a{
+      display: inline-block;
+      text-decoration: none;
+      color: black;
+      background-color: #6B9900;
+      width: 200px;
+      height: 60px;
+      text-align: center;
+      font:bold 20px Verdana;
+      line-height: 60px
+    }
+    li {
+      list-style: none;
+      float: left;
+      width: 200px;
+      height: 60px;
+      line-height: 60px;
+    }
+  </style>
+  <script>
+    $(()=>{
+      $('li a').hover(function() {
+        let overColor = $(this).attr('data-bg');
+        // console.log(overColor);
+        $(this).stop()
+               .animate({'background-color': overColor
+                         , color:'white'}
+                         , 500);
+      }, function() {
+        $(this).stop()
+               .animate({'background-color': '#6B9900'
+                        , color:'black'}
+                        , 700);
+      })
+    })
+  </script>
+</head>
+<body>
+  <ul>
+    <li><a href="#" data-bg="#005D72">Home</a></li>
+    <li><a href="#" data-bg="#AB1994">About</a></li>
+    <li><a href="#" data-bg="#0D3EA3">Portfolio</a></li>
+    <li><a href="#" data-bg="#BA942B">Content</a></li>
+  </ul>
+</body>
+</html>

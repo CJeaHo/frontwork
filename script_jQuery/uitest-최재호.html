@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>uitest-최재호</title>
+   <style>
+      form {
+         padding: 15px;
+         width: 50%;
+         border-radius: 10px;
+         background-color: aquamarine;
+      }
+   </style>
+</head>
+<body>
+   <form name="regFrm">
+      <fieldset>
+         <legend>필수 입력 사항</legend>
+         <table>
+            <tr>
+               <td align="center">
+                  <b>ID</b>
+               </td>
+               <td>
+                  <input type="text">
+               </td>
+               <td>
+                  <button>중복 확인</button>
+               </td>
+            </tr>
+            <tr>
+               <td align="center">
+                  <b>비밀번호</b>
+               </td>
+               <td>
+                  <input type="password" id="pw">
+               </td>
+            </tr>
+            <tr>
+               <td align="center">
+                  <b>비밀번호 확인</b>
+               </td>
+               <td>
+                  <input type="password" id="pwCheck">
+                  <div id="pwMessage"></div>
+               </td>
+            </tr>
+            <tr>
+               <td align="center">
+                  <b>Email</b>
+               </td>
+               <td>
+                  <input type="email">
+               </td>
+               <td>
+                  <select name="email">
+                     <option value="직접입력">직접입력</option>
+                     <option value="naver.com">네이버</option>
+                     <option value="gmail.com">Gmail</option>
+                  </select>
+               </td>
+            </tr>
+         </table>
+      </fieldset>
+      <fieldset>
+         <legend>추가 정보</legend>
+         <table>
+            <tr>
+               <td>프로필 사진 : <input type="file"></td>
+            </tr>
+            <tr>
+               <td><br>
+                  성별 :  
+                  <input type="radio" name="gender" value="M">남자
+                  <input type="radio" name="gender" value="F">여자
+               </td> 
+            </tr>
+            <tr>
+               <td><br>생년월일 : <input type="date" name="date"></td>
+            </tr>
+            <tr>
+               <td><br>
+                  취미<br>  
+                  <input type="checkbox" name="hobby" value="baseball">야구
+                  <input type="checkbox" name="hobby" value="basketball">농구
+                  <input type="checkbox" name="hobby" value="soccer">축구<br>
+                  <input type="checkbox" name="hobby" value="study">공부
+                  <input type="checkbox" name="hobby" value="music">음악감상<br>
+                  <input type="checkbox" name="hobby">기타 : <input type="text" name="hobby">
+               </td>
+            </tr>
+            <tr>
+               <td><br>자기소개<br>
+                  <textarea name="introduce" cols="31" rows="5"></textarea>
+               </td>
+            </tr>
+         </table>
+      </fieldset>
+      <br>
+      <input type="button" value="회원가입" onclick="return_test();"></input>
+      <input type="reset" value="다시 입력">
+   </form>
+   <script>
+      function return_test() {
+         let pw = document.getElementById("pw");
+         let pwCheck = document.getElementById("pwCheck");
+         let pwMessage = document.getElementById("pwMessage");
+
+         if (pw.value != pwCheck.value) {
+            alert ("비밀번호가 틀립니다");
+            pwCheck.focus();
+            return
+         } else {
+            alert ("비밀번호가 일치합니다");
+            document.regFrm.submit();
+         }
+      }
+   </script>
+</body>
+</html>
