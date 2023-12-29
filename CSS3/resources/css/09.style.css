@@ -1,0 +1,66 @@
+div {
+	width: 90px;
+	height: 90px;
+	border-width: 3px;
+	margin: 10px;
+	padding: 10px;
+}
+
+#test1 {
+	/* 특정 위치에 테두리를 줄 수 있다 */
+	border-top-style: dotted;
+	border-top-width: 10px; /*위에만 주고싶다*/
+}
+#test2 {
+	box-shadow: 5px 5px 10px 5px gray;
+}
+#test3 {
+	border-style: dashed; /*전부 dashed*/
+	border-style: dashed double; /*상, 하 dashed & 좌, 우 doubled*/
+	border-style: dashed double solid dotted; /*시계방향*/
+	border-width: 5px;
+}
+#test4 {
+	border-style: groove;
+	border-width: 20px;
+}
+#test5 {
+	border-style: ridge;
+	border-width: 20px;
+}
+#test6 {
+	border-style: inset;
+	border-width: 20px;
+	border-left-color: red;
+	border-top-color:red ;
+}
+#test7 {
+	border-style: outset;
+	border-width: 20px;
+}
+#test8 {
+	border-style: solid;
+	border-radius: 20px;
+}
+#test9 {
+	border-style: solid;
+	border-top-left-radius: 20px;
+	border-bottom-left-radius: 60px;
+	border-bottom-right-radius: 40px;
+	background-color: magenta;
+}
+#test10 {
+	border: 10px dotted coral;
+}
+#btn:hover {
+	background-color: khaki;
+}
+#inputBtn {
+	border: none;
+	padding: 10px 20px;
+	border-radius: 10px;
+	background-color: indianred;
+}
+#inputBtn:hover {
+	background-color: teal;
+}

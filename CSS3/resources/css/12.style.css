@@ -1,0 +1,26 @@
+.size-text {border: 10px solid fuchsia;}
+#test1{width: 400px; height: 200px;}
+#test2{width: 50%; height: 150px;}
+
+.display-test {
+	border: 1px solid;
+	width: 150px;
+	height: 150px;
+}
+
+/* 단어 마디로 구분이 된다 */
+.red {background-color: red;}
+.yellow {background-color: yellow;}
+.pink {background-color: pink;}
+.green {background-color: green;}
+.purple {background-color: purple;}
+
+/* 블럭요소인 div를 인라인요소 형태로 바꿈. width와 height가 적용X */
+.inline {display: inline;}
+
+/* width, heigt가 적용된 블럭요소가 인라인요소 형태로 옆으로 배치 */
+.inline-block {display: inline-block;} 
+
+ /* 인라인요소인 span을 블럭요소 형태로 바꿈. width와 height가 적용 */
+.block {display: block;}
+

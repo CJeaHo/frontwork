@@ -1,0 +1,81 @@
+/* 전체 */
+body {
+   width:1000px;
+ }
+ 
+ /* header */
+ header {
+   height: 300px;
+ }
+ #logo {
+   float: left;
+ }
+ #login {
+   float: right;
+   margin-top: 5px;
+ }
+ #titleImg {
+   clear: both;
+   height: 240px;
+   width: 100%;
+ }
+ 
+ /* nav */
+ .navi {
+   width: 100%;
+   height: 60px;
+   background-color: rgb(6, 54, 56);
+   display: flex;
+   justify-content: space-around;
+   align-items: center;
+ }
+ 
+ .navi > a {
+   color: white;
+   text-align: center;
+   line-height: 60px;
+ }
+ 
+ .navi > a:hover {
+   color: yellow;
+ }
+ 
+ .navi > a:active {
+   color: red;
+ }
+ 
+ /* 본문 */
+ section {
+   margin-top: 20px;
+   width: 630px;
+   padding-left: 20px;
+   float: left; /* 기존에 있는 float 추가 */
+ }
+ 
+ section h4 {
+   color: darkcyan;
+   margin: 10px 0;
+ }
+ 
+/* side */
+aside {
+   display: flex;
+   flex-direction: column;
+   align-items: flex-end;
+   width: 300px;
+   margin-top: 5px;
+ }
+ 
+ aside > img {
+   width: 100%;
+   margin-bottom: 10px; /* 이미지 간 간격을 위한 여백 추가 */
+ }
+ 
+ 
+ /* footer */
+ footer {
+   clear: both;
+   background-color: rgb(66, 66, 248);
+ }
+ footer>p {color: white; padding: 5px 15px; font-size: small;}
+ 

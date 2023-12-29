@@ -1,0 +1,43 @@
+.positioning {border: 1px solid;}
+.ye {background: yellow;}
+.gr {background: green;}
+.rd {background: red;}
+
+.outer {position: relative;}
+
+#first {
+	width: 300px;
+	height: 300px;
+}
+#second {
+	width: 200px;
+	height: 200px;
+	position: absolute; /*absolute는 relative 포지션을 찾아 기준으로 삼는다. 없다면 body를 기준으로 삼는다*/
+	top: 50px; /*relative 포지션이 되어있는 첫번째 자식을 기준으로 50px만큼 위에서 멀어짐*/
+	left: 50px;
+}
+#third {
+	width: 100px;
+	height: 100px;
+	position: absolute;
+	top: 100px;
+	left: 100px;
+}
+
+#fixed-area {
+	width: 100px;
+	height:100px;
+	/* 스크롤을 쫓아다닌다 */
+	/* position: fixed; */
+}
+
+.float-test {
+	border: 1px solid;
+	width: 50px;
+	height: 50px;
+	/* 요소끼리 틈이 있다 */
+	/* display: inline-block; */
+	/* 요소끼리 틈이 없다 */
+	float: left;  /* 요소1~요소5 왼쪽(기준)에서 오른쪽으로*/
+	float: right; /*요소5~요소1 오른쪽(기준)에서 왼쪽으로*/
+}

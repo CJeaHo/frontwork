@@ -1,0 +1,22 @@
+ul {
+   list-style-type: none;
+   padding: 0;
+   border: 2px solid;
+   height: 50vh; /*화면을 기준으로*/
+   width: 600px; 
+   
+   display: flex;
+   /* justify-content: left; */
+   flex-wrap: wrap;
+   flex-direction: column-reverse;
+}
+
+li{
+   width: 100px;
+   height: 100px;
+   background-color: mediumturquoise;
+   border: 2px solid;
+   margin: 5px;
+   text-align: center;
+   line-height: 100px;
+}

@@ -1,0 +1,30 @@
+table { /*테이블 전체(테이블 테두리)*/
+	border: 1px solid; 
+	border-collapse: separate; /*갈라짐=두 줄(기본값)*/
+	border-spacing: 20px 50px; /*가로간격(px) 세로간격(px)*/
+	border-collapse: collapse; /*합쳐짐=한 줄*/
+
+	width: 450px; /*영어가 담긴 th는 제목 너비를 바꿔도 그대로 내용에 맞게 크기 유지*/
+	table-layout: fixed; /*내용이 셀 크기에 관계없이 고정시키고 셀은 자유자재로*/
+}
+thead, tfoot {
+	background-color: gold;
+}
+tbody {
+	background-color: olivedrab;
+}
+
+th, td {
+	width: 200px;
+	height: 100px;
+	padding: 10px;
+	text-align: center; /*글씨 가운데 정렬*/
+	vertical-align: top; /*vertical-align은 테이블에서만 사용할 수 있는 스타일 속성*/
+	vertical-align: bottom; /*vertical-align: middle(기본값)|top|bottom*/
+	border: 1px dashed red;
+	word-break: break-all; /*영어여도 글자에 공백이 없어도 중간에 끊어서 내림*/
+}
+
+.borderTop {
+	border-top: 5px double blue;
+}
